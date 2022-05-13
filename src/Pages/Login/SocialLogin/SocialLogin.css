@@ -1,0 +1,13 @@
+@media only screen and (max-width:576px) {
+    .sign-in {
+        width: 100%;
+        background-color: blanchedalmond;
+    }
+}
+
+@media only screen and (min-width:576px) {
+    .sign-in {
+        width: 50%;
+        background-color: blanchedalmond;
+    }
+}

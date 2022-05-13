@@ -1,0 +1,19 @@
+.login {
+    /* background-color: rgb(160, 167, 167); */
+}
+
+@media only screen and (min-width:576px) {
+    .login {
+        background-color: aliceblue;
+        border-radius: 20px;
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .login {
+        border-radius: 20px;
+        background-color: aliceblue;
+        width: 80%;
+    }
+}
