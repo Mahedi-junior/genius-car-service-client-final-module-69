@@ -13,8 +13,10 @@ const Order = () => {
     useEffect(() => {
 
         const getOrders = async () => {
-            const email = user.email;
-            const url = `http://localhost:5000/order?email=${email}`;
+            const email = user?.email;
+            console.log(email);
+
+            const url = `https://young-falls-41187.herokuapp.com/order?email=${email}`;
             try {
                 const { data } = await axiosPrivate.get(url);
                 setOrders(data);
@@ -22,7 +24,7 @@ const Order = () => {
 
 
             catch (error) {
-                // console.log(error.messess);
+                console.log(error.messess);
                 if (error.response.status === 401 || error.response.status === 403) {
                     signOut(auth);
                     navigate('/login')
@@ -35,8 +37,13 @@ const Order = () => {
 
 
     return (
-        <div>
-            <h2>Your total Orders:  {orders.length}</h2>
+        <div className='w-50 mx-auto mt-3'>
+            <h2 className='text-success'>Your total Orders:  {orders.length}</h2>
+            {
+                orders.map(order => <div key={order._id}>
+                    <p>{order.email} :  {order.service}</p>
+                </div>)
+            }
         </div>
     );
 };

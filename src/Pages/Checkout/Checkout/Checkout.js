@@ -14,21 +14,7 @@ const Checkout = () => {
         console.dir(user);
     }
 
-    // const [user, setUser] = useState({
-    //     name: 'Akbar The Great',
-    //     email: 'akbar@gmail.com',
-    //     address: 'Tajmohol Road Md.pur',
-    //     phone: '01723465282'
-    // });
 
-    // const handleAddressChange = event => {
-    //     console.log(event.target.value);
-    //     const { address, ...rest } = user;
-    //     const newAddress = event.target.value;
-    //     const newUser = { address: newAddress, ...rest };
-    //     console.log(newUser);
-    //     setUser(newUser);
-    // }
 
     const handlePlaceOrder = event => {
         event.preventDefault();
@@ -39,7 +25,7 @@ const Checkout = () => {
             address: event.target.address.value,
             phone: event.target.phone.value,
         }
-        axios.post('http://localhost:5000/order', order)
+        axios.post('https://young-falls-41187.herokuapp.com/order', order)
             .then(response => {
                 const { data } = response;
 
